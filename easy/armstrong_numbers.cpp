@@ -1,8 +1,8 @@
 // CodeEval
 // Anne Celestino - hubwub
 // Challenge Level: Easy
-// Challenge Description: Self Describing Numbers
-// Challenge Link: https://www.codeeval.com/open_challenges/40/
+// Challenge Description: Armstrong Words
+// Challenge Link: https://www.codeeval.com/open_challenges/82/
 
 #include <iostream>
 #include <string>
@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
+#include <math.h>
 
 using namespace std;
 
@@ -20,7 +21,6 @@ int main(int argc, char** argv)
 	ifstream file;
 	string lineBuffer;
 	file.open(argv[1]);
-	vector<int> number;
 	while (!file.eof()) 
 	   {
 	       getline(file, lineBuffer);
@@ -29,40 +29,33 @@ int main(int argc, char** argv)
 	       else 
 	       {
 	           //do something here
-	       	   number.clear();
-	       	   number.resize(10);
 	       	   istringstream iss(lineBuffer);
-	       	   int n;
-	       	   iss >> n;
-	       	   
-	       	   int num = 1;
+	       	   int num;
+	       	   iss >> num;
 
-	       	   while(n > num)
+	       	   int count = 0, sum = 0, temp = num;
+
+	       	   while(temp > 0)
 	       	   {
-	       	   		number[(n/num)%10]++;
-	       	   		num *= 10;
+	       	   		++count;
+	       	   		temp /= 10;
 	       	   }
 
-	       	   num /= 10;
+	       	   temp = num;
 
-	       	   int i = 0;
-
-	       	   while(num > 0)
+	       	   while(temp > 0)
 	       	   {
-	       	   		if(number[i++] != (n/num)%10)
-	       	   		{
-	       	   			cout << "0" << endl;
-	       	   			break;
-	       	   		}
-	       	   		else
-	       	   		{
-	       	   			num /= 10;
-	       	   		}
+	       	   		sum += pow((double) (temp%10), count);
+	       	   		temp /= 10;
 	       	   }
 
-	       	   if(num == 0)
+	       	   if(sum == num)
 	       	   {
-	       	   		cout << "1" << endl; 
+	       	   		cout << "True" << endl;
+	       	   }
+	       	   else
+	       	   {
+	       	   		cout << "False" << endl;
 	       	   }
 
 	       }
