@@ -9,10 +9,15 @@ Your program should accept as its first argument a path to a filename. Each line
 
 
 1
+
 2
+
 3
+
 6
+
 153
+
 351
 
 ##OUTPUT SAMPLE:
@@ -21,8 +26,13 @@ Print out True/False if the number is an Armstrong number or not. E.g.
 
 
 1
+
 2
+
 3
+
 True
+
 True
+
 False
