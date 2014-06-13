@@ -8,12 +8,6 @@ An Armstrong number is an n-digit number that is equal to the sum of the n'th po
 Your program should accept as its first argument a path to a filename. Each line in this file has a positive integer. E.g.
 
 
-1
-
-2
-
-3
-
 6
 
 153
@@ -23,13 +17,6 @@ Your program should accept as its first argument a path to a filename. Each line
 ##OUTPUT SAMPLE:
 
 Print out True/False if the number is an Armstrong number or not. E.g.
-
-
-1
-
-2
-
-3
 
 True
 
